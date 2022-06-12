@@ -1,0 +1,14 @@
+<div>
+  <!-- <div *ngIf="!onlyOdd"><li *ngFor="let number of evenNumbers" [ngClass]="!onlyodd?'lion':''">{{number}}</li></div> -->
+  <div *appUnless="!onlyOdd"><li *ngFor="let number of evenNumbers" [ngClass]="!onlyodd?'lion':''">{{number}}</li></div>
+  <div *ngIf="onlyOdd"><li *ngFor="let number of oddNumbers" [ngStyle]="{background:onlyOdd?'yellow':'transparent'}">{{number}}</li></div>
+  <input type="Submit" (click)="getNumbers()">
+  <!--This is Structure Directive-->
+  <p appBasicHighlight>This is basic highlight</p>
+  <p appBetterHighlight [defaultColor]="'blue'" [highlightColor]="'purple'">This is a better highlight</p> 
+  <div [ngSwitch]="value">
+    <p *ngSwitchCase="5">Value is 5</p>
+    <p *ngSwitchCase="10">Value is 10</p>
+    <p *ngSwitchCase="100">Value is 100</p>
+    <p *ngSwitchDefault>Value is Default</p></div>
+</div>
